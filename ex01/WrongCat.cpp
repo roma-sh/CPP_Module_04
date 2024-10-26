@@ -17,7 +17,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	type = "WrongCat";
 	std::cout<< "WrongCat default constructor is here"<<std::endl;
 }
-WrongCat::WrongCat(std::string type_in) : WrongAnimal("Animal_Dog")
+WrongCat::WrongCat(std::string type_in) : WrongAnimal("Animal_cat")
 {
 	(void)type_in;
 	type = "WrongCat";

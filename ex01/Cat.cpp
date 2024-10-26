@@ -18,7 +18,7 @@ Cat::Cat() : Animal()
 	type = "Cat";
 	std::cout<< "Cat default constructor is here"<<std::endl;
 }
-Cat::Cat(std::string type_in) : Animal("Animal_Dog")
+Cat::Cat(std::string type_in) : Animal("Animal_Cat")
 {
 	_Brain = new Brain();
 	(void)type_in;

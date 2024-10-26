@@ -43,6 +43,8 @@ int main()
 	y.getBrain()->Print_Ideas();
 	std::cout<<"==========================================="<<std::endl;
 
-
+	// but this is now allowd:
+	// Animal x;
+	// Animal y("Monkey");
 	return 0;
 }

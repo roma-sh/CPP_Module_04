@@ -24,10 +24,10 @@ class Animal
 		Animal(std::string type_in);
 		Animal(Animal& original);
 		Animal& operator=(Animal& original);
-		virtual ~Animal();
+		virtual ~Animal() = 0; // Pure virtual destructor makes Animal an abstract class
 
 		std::string getType() const;
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0; //Pure virtual function
 };
 
 #endif

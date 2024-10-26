@@ -16,33 +16,41 @@
 
 int main()
 {
-	Animal* GroupA[100];
-	for(int i = 0; i < 100; i++)
 	{
-		if (i < 50)
-			GroupA[i] = new Dog();
-		else
-			GroupA[i] = new Cat();
+		Animal* GroupA[100];
+		for(int i = 0; i < 100; i++)
+		{
+			if (i < 50)
+				GroupA[i] = new Dog();
+			else
+				GroupA[i] = new Cat();
+		}
+		for(int i = 0; i < 100; i++)
+			delete GroupA[i];
+		std::cout<<"==========================================="<<std::endl;
+		Dog boby("boby");
+		boby.getBrain()->Add_Idea("this is the first idea");
+		boby.getBrain()->Add_Idea("now I learnt the second");
+		boby.getBrain()->Add_Idea("wow I have three ideas now");
+		boby.getBrain()->Print_Ideas();
+		std::cout<<"==========================================="<<std::endl;
+		std::cout<<"=========== Test the Deep copy for cat class ========="<<std::endl;
+		Cat x("bis");
+		Cat y(x);
+		x.getBrain()->Add_Idea("This is my own Idea");
+		y.getBrain()->Add_Idea("This is NOT her Idea, I also have my own ideas");
+		std::cout<<"==========================================="<<std::endl;
+		x.getBrain()->Print_Ideas();
+		y.getBrain()->Print_Ideas();
+		std::cout<<"==========================================="<<std::endl;
 	}
-	for(int i = 0; i < 100; i++)
-		delete GroupA[i];
-	std::cout<<"==========================================="<<std::endl;
-	Dog boby("boby");
-	boby.getBrain()->Add_Idea("this is the first idea");
-	boby.getBrain()->Add_Idea("now I learnt the second");
-	boby.getBrain()->Add_Idea("wow I have three ideas now");
-	boby.getBrain()->Print_Ideas();
-	std::cout<<"==========================================="<<std::endl;
-	std::cout<<"=========== Test the Deep copy for cat class ========="<<std::endl;
-	Cat x("bis");
-	Cat y(x);
-	x.getBrain()->Add_Idea("This is my own Idea");
-	y.getBrain()->Add_Idea("This is NOT her Idea, I also have my own ideas");
-	std::cout<<"==========================================="<<std::endl;
-	x.getBrain()->Print_Ideas();
-	y.getBrain()->Print_Ideas();
-	std::cout<<"==========================================="<<std::endl;
-
+	// from the subject:
+	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		delete j;//should not create a leak
+		delete i;
+	}
 
 	return 0;
 }

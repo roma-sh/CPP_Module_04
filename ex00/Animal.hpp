@@ -28,6 +28,10 @@ class Animal
 
 		std::string getType() const;
 		virtual void	makeSound() const;
+		// when a class has virtual functions,
+		// it's important when deleting derived class objects through a base class pointer,
+		// as it ensures the proper destructor chain is called, avoiding potential memory
+		// leaks or undefined behavior.
 };
 
 #endif
