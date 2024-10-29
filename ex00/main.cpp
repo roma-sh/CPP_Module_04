@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 20:12:05 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/22 22:05:38 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:25:59 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ std::cout<<"================================"<<std::endl;
 	const WrongAnimal* meta = new WrongAnimal();
 	const WrongAnimal* i = new WrongCat();
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	meta->makeSound();
 	delete meta;
 	delete i;

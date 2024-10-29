@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 21:52:20 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/22 22:14:40 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:31:53 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class WrongAnimal
 		virtual ~WrongAnimal();
 
 		std::string getType() const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 #endif
