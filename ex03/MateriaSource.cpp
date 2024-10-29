@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 21:45:40 by rshatra           #+#    #+#             */
-/*   Updated: 2024/10/29 02:01:44 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/10/29 02:59:47 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,16 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (_templates[i] == nullptr)
 		{
-			_templates[i] = m; // Store a clone of the Materia
+			_templates[i] = m; // Store the Materia itself so remove the ownership from the caller function
+			// to MateriaSource object which will free it in the destructor
+			// we could use :
+			// _templates[i] = m->clone(); to Store aclone of the Materia
+			// but this will cause a leak in main L23 and L24
+			// because we are not freeing the memory in the first allocation new Ice() and new Cure()
+			// and by cloning we are allocating memory again for the same object "a clone of it"
+			// but we only free the cloned one in the MateriaSource destructor
+			// and still the original allocation without any deallocation
+			// in this case we should delete m after clone it, so the caller function will lose it
 			return;
 		}
 	}
