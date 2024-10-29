@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/22 20:12:08 by rshatra           #+#    #+#              #
-#    Updated: 2024/10/27 00:40:55 by rshatra          ###   ########.fr        #
+#    Created: 2024/10/29 00:51:30 by rshatra           #+#    #+#              #
+#    Updated: 2024/10/29 01:34:11 by rshatra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
-CFLAGS = -g -Wall -Werror -Wextra
+NAME = materia
+CFLAGS = -g -Wall -Werror -Wextra -std=c++11
 CC = g++
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp  MateriaSource.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
@@ -34,4 +34,4 @@ fclean: clean
 
 re: fclean all
 
-.SILENT: 
+.SILENT:
